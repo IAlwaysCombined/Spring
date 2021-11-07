@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Редактирование Студента</h1>
+<div th:each="el :${studentPost}">
+    <form method="post">
+        <input type="text" th:value="${el.name}" name="name" placeholder="Имя">
+        <input type="text" th:value="${el.surename}" name="surename" placeholder="Фамилия">
+        <input type="text" th:value="${el.midlle_name}" name="midlle_name" placeholder="Отчество">
+        <input type="text" th:value="${el.phone_number}" name="phone_number" placeholder="Номер телефона">
+        <input type="text" th:value="${el.adress}" name="adress" placeholder="Адрес">
+        <input type="text" th:value="${el.bday}" name="bday" placeholder="Дата рождения">
+        <input type="text" th:value="${el.gruop}" name="gruop" placeholder="Группа">
+        <button type="submit">Редактировать</button>
+    </form>
+   <form th:action="'/student/' + ${el.id} + '/remove'" method="post">
+        <button type="submit">Удалить</button>
+    </form>
+</div>
+</body>
+</html>

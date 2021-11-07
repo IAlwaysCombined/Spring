@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>№</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Отчество</th>
+        <th>Номер телефона</th>
+        <th>Адрес</th>
+        <th>Возраст</th>
+        <th>Дата рождения</th>
+        <th>Группа</th>
+    </tr>
+    <tr th:each="el : ${students}">
+        <td th:text="${el.id}"> </td>
+        <td th:text="${el.name}   "> </td>
+        <td th:text="${el.surename}"> </td>
+        <td th:text="${el.midlle_name}"> </td>
+        <td th:text="${el.phone_number}"></td>
+        <td th:text="${el.adress}"></td>
+        <td th:text="${el.age}"></td>
+        <td th:text="${el.bday}"></td>
+        <td th:text="${el.gruop}"></td>
+    </tr>
+</table>
+</body>
+</html>

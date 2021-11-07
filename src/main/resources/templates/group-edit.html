@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="el :${group}">
+    <form method="post">
+        <input type="text" th:value="${el.nameGroup}" name="nameGroup" placeholder="Название группы">
+        <input type="text" th:value="${el.count_number}" name="count_number" placeholder="Количество учащихся">
+        <button type="submit">Редактировать</button>
+    </form>
+    <form th:action="'/group/' + ${el.id} + '/remove'" method="post">
+        <button type="submit">Удалить</button>
+    </form>
+</div>
+</body>
+</html>

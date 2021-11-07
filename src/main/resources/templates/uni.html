@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="${'uni/add'}" method="post">
+        <select name="student">
+            <div th:each="element : ${students}">
+                <option th:text="${element.name}"></option>
+            </div>
+        </select>
+
+        <select name="university">
+            <div th:each="element : ${universities}">
+                <option th:text="${element.name}"></option>
+            </div>
+        </select>
+        <br>
+        <button type="submit">Добавить</button>
+    </form>
+</body>
+</html>

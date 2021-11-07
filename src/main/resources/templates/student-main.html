@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+    <H3>Студенты</H3>
+    <table>
+        <tr>
+            <th>№</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Отчество</th>
+        </tr>
+        <tr th:each="el : ${students}">
+            <td th:text="${el.id}"> </td>
+            <td th:text="${el.name}   "> </td>
+            <td th:text="${el.surename}"> </td>
+            <td th:text="${el.midlle_name}"> </td>
+            <td> <a th:href="'/student/' +${el.id}"> Подробное </a></td>
+            <td><a th:href="'/student/' + ${el.id} + '/edit/'"> Редактировать</a> </td>
+        </tr>
+    </table>
+
+    <H3>Группы</H3>
+    <table>
+        <tr>
+            <th> № </th>
+            <th> Группа </th>
+            <th> Количество человек </th>
+        </tr>
+        <tr th:each="el : ${groups}">
+            <td th:text="${el.id}"></td>
+            <td th:text="${el.nameGroup}"></td>
+            <td th:text="${el.count_number}"></td>
+            <td><a th:href="'/group/' + ${el.id} + '/edit/'"> Редактировать</a> </td>
+        </tr>
+    </table>
+
+    <H3>Предметы</H3>
+    <table>
+        <tr>
+        <th> № </th>
+        <th> Предмет </th>
+            <th> Длительность придмета (часы)</th>
+        </tr>
+        <tr th:each="el : ${subjects}">
+            <td th:text="${el.id}"></td>
+            <td th:text="${el.nameSubject}"></td>
+            <td th:text="${el.subjectLong}"></td>
+            <td><a th:href="'/subject/' + ${el.id} + '/edit/'"> Редактировать</a> </td>
+        </tr>
+    </table>
+</body>
+</html>

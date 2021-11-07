@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Редактирование Группы</h1>
+<div th:each="el :${subject}">
+    <form method="post">
+        <input type="text" th:value="${el.nameSubject}" name="nameSubject" placeholder="Название предмета">
+        <input type="text" th:value="${el.subjectLong}" name="subjectLong" placeholder="Количество часов">
+        <button type="submit">Редактировать</button>
+    </form>
+    <form th:action="'/subject/' + ${el.id} + '/remove'" method="post">
+        <button type="submit">Удалить</button>
+    </form>
+</div>
+</body>
+</html>
